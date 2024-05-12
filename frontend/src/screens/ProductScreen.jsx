@@ -28,7 +28,6 @@ const ProductScreen = () => {
     return <div>Loading...</div>; 
   }
 
-
   return (
     <>
       <Link className="btn btn-light my-3" to="/">
