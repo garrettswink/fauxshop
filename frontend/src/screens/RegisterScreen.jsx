@@ -1,51 +1,3 @@
-// main.jsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider
- } from 'react-router-dom';
-
-import { Provider } from 'react-redux';
-import store from './store';
-
-import HomeScreen from './screens/HomeScreen.jsx';
-import ProductScreen from './screens/ProductScreen.jsx';
-import CartScreen from './screens/CartScreen.jsx';
-import LoginScreen from './screens/LoginScreen.jsx';
-import RegisterScreen from './screens/RegisterScreen.jsx';
-
-import App from './App.jsx';
-import './assets/styles/bootstrap.custom.css';
-import './assets/styles/index.css';
-// This is the standard boostrap css import, which is commented out
-// In favor of custom styles. It might be worth reworking the custom styles
-// Even further to make it more unique
-// import 'bootstrap/dist/css/bootstrap.min.css'
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<App />}>
-      <Route index={true} path="/" element={<HomeScreen />} />
-      <Route path="/product/:id" element={<ProductScreen />} />
-      <Route path="/cart" element={<CartScreen />} />
-      <Route path="/login" element={<LoginScreen />} />
-      <Route path="/register" element={<RegisterScreen />} />
-    </Route>
-  )
-);
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Provider store={store}>
-    <RouterProvider router={router} />
-    </Provider>
-  </React.StrictMode>,
-)
-
-// RegisterScreen.jsx
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
@@ -101,6 +53,19 @@ const [name, setName] = useState("");
     <FormContainer>
       <h1>Sign Up</h1>
       <Form onSubmit={submitHandler}>
+
+      <Form.Group controlId="name" className="my-3">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+
+
+
         <Form.Group controlId="email" className="my-3">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
@@ -121,9 +86,19 @@ const [name, setName] = useState("");
           ></Form.Control>
         </Form.Group>
 
+        <Form.Group controlId="confirmPassword" className="my-3">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Confirm password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+
         <Button type="submit" variant="primary" className="mt-2"
         disabled={ isLoading }>
-          Sign In
+          Join
         </Button>
 
         { isLoading && <Loader /> } 
@@ -131,9 +106,9 @@ const [name, setName] = useState("");
       </Form>
       <Row className="py-3">
         <Col>
-          New Customer?{' '}
-          <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-            Register
+          Already have an account?{' '}
+          <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
+            Login
             </Link>
         </Col>
       </Row>
@@ -142,5 +117,3 @@ const [name, setName] = useState("");
 };
 
 export default RegisterScreen;
-
-// Why doesn't my app render anymore. I just added the RegisterScreen
