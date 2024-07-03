@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import {
   Form,
@@ -35,6 +35,12 @@ const ProductScreen = () => {
     navigate("/cart");
   };
 
+  useEffect(() => {
+    if (product) {
+      console.log(product.image); // Log the image URL to verify it's correct
+    }
+  }, [product]);
+
   return (
     <>
       <Link className="btn btn-light my-3" to="/">
@@ -50,7 +56,7 @@ const ProductScreen = () => {
       ) : (
         <Row>
           <Col md={5}>
-            <Image src={product.image} alt={product.name} fluid />
+          <Image src={product.image.replace('/frontend/public', '')} alt={product.name} fluid />
           </Col>
 
           <Col md={4}>
@@ -132,7 +138,9 @@ const ProductScreen = () => {
             </Card>
           </Col>
         </Row>
+        
       )}
+
     </>
   );
 };

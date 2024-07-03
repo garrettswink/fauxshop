@@ -6,10 +6,13 @@ import Rating from "./Rating";
 // This is brought in via index.css with the product-title class
 
 const Product = ({ product }) => {
+
+  const imageUrl = product.image.replace('/frontend/public', '');
+
   return (
     <Card className="my-3 p-3 rounded">
       <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.image} variant="top" />
+      <Card.Img src={imageUrl}  variant="top" />
       </Link>
 
       <Card.Body>

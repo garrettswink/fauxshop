@@ -12,9 +12,10 @@
 
 // All this shit goes down in 4.3
 export const BASE_URL = 'http://localhost:8000';
-export const PRODUCTS_URL = '/api/products';
-export const USERS_URL = '/api/users';
+export const PRODUCTS_URL = 'http://localhost:8000/api/products';
+export const USERS_URL = 'http://localhost:8000/api/users';
 export const ORDERS_URL = 'http://localhost:8000/api/orders';
 export const PAYPAL_URL = 'http://localhost:8000/api/config/paypal';
+export const UPLOAD_URL = 'http://localhost:8000/api/upload';
 
 
