@@ -11,7 +11,10 @@ import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
-const port = process.env.PORT || 3001;
+const port = 10000
+
+// Production ports
+// process.env.PORT || 3001;
 
 connectDB(); // Connect to MongoDB
 
