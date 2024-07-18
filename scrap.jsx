@@ -1,3 +1,4 @@
+// Backend Server
 import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv';
@@ -11,7 +12,6 @@ import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
-// Render's Default Deployment Port
 const port = 10000
 
 // Production ports
@@ -75,3 +75,15 @@ app.use(notFound);
 app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+
+// Frontend Constants
+export const BASE_URL = 'http://localhost:10000';
+export const PRODUCTS_URL = 'http://localhost:10000/api/products';
+export const USERS_URL = 'http://localhost:10000/api/users';
+export const ORDERS_URL = 'http://localhost:10000/api/orders';
+export const PAYPAL_URL = 'http://localhost:10000/api/config/paypal';
+export const UPLOAD_URL = 'http://localhost:10000/api/upload';
+
+// Promp
+How should I revise the constants for deployment to render?

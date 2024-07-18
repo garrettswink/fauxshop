@@ -13,12 +13,14 @@
 // All this shit goes down in 4.3
 
 // Depoloyment Constants
-export const BASE_URL = 'http://localhost:10000';
-export const PRODUCTS_URL = 'http://localhost:10000/api/products';
-export const USERS_URL = 'http://localhost:10000/api/users';
-export const ORDERS_URL = 'http://localhost:10000/api/orders';
-export const PAYPAL_URL = 'http://localhost:10000/api/config/paypal';
-export const UPLOAD_URL = 'http://localhost:10000/api/upload';
+
+const BASE_URL = 'https://fauxshop.onrender.com';
+
+export const PRODUCTS_URL = `${BASE_URL}/api/products`;
+export const USERS_URL = `${BASE_URL}/api/users`;
+export const ORDERS_URL = `${BASE_URL}/api/orders`;
+export const PAYPAL_URL = `${BASE_URL}/api/config/paypal`;
+export const UPLOAD_URL = `${BASE_URL}/api/upload`;
 
 // These were the constants used in development.
 // export const BASE_URL = 'http://localhost:8000';
