@@ -11,12 +11,22 @@
 // This is the secondary solution that also works, but is not the same as what is seen in the T code.
 
 // All this shit goes down in 4.3
-export const BASE_URL = 'http://localhost:8000';
-export const PRODUCTS_URL = 'http://localhost:8000/api/products';
-export const USERS_URL = 'http://localhost:8000/api/users';
-export const ORDERS_URL = 'http://localhost:8000/api/orders';
-export const PAYPAL_URL = 'http://localhost:8000/api/config/paypal';
-export const UPLOAD_URL = 'http://localhost:8000/api/upload';
+
+// Depoloyment Constants
+export const BASE_URL = 'http://localhost:10000';
+export const PRODUCTS_URL = 'http://localhost:10000/api/products';
+export const USERS_URL = 'http://localhost:10000/api/users';
+export const ORDERS_URL = 'http://localhost:10000/api/orders';
+export const PAYPAL_URL = 'http://localhost:10000/api/config/paypal';
+export const UPLOAD_URL = 'http://localhost:10000/api/upload';
+
+// These were the constants used in development.
+// export const BASE_URL = 'http://localhost:8000';
+// export const PRODUCTS_URL = 'http://localhost:8000/api/products';
+// export const USERS_URL = 'http://localhost:8000/api/users';
+// export const ORDERS_URL = 'http://localhost:8000/api/orders';
+// export const PAYPAL_URL = 'http://localhost:8000/api/config/paypal';
+// export const UPLOAD_URL = 'http://localhost:8000/api/upload';
 
 
 
