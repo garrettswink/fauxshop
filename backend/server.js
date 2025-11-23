@@ -22,22 +22,26 @@ connectDB(); // Connect to MongoDB
 const app = express();
 
 const allowedOrigins = [
-  'http://localhost:5173',
-  'https://fauxshop.onrender.com'
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+  "https://fauxshop.onrender.com",
 ];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    // allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  },
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // allow non-browser clients
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error(`Not allowed by CORS: ${origin}`), false);
+    },
+    credentials: true,
+  })
+);
 
 // Body parser middleware
 app.use(express.json());
