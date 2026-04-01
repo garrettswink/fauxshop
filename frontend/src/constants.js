@@ -13,13 +13,15 @@
 // All this shit goes down in 4.3
 
 // Depoloyment Constants
+// For local dev, BASE_URL is empty; Vite proxy forwards /api to the backend.
+// For production, set to 'https://fauxshop-server.onrender.com'.
 
-export const BASE_URL = 'https://fauxshop-server.onrender.com';
-export const PRODUCTS_URL = `${BASE_URL}/api/products`;
-export const USERS_URL = `${BASE_URL}/api/users`;
-export const ORDERS_URL = `${BASE_URL}/api/orders`;
-export const PAYPAL_URL = `${BASE_URL}/api/config/paypal`;
-export const UPLOAD_URL = `${BASE_URL}/api/upload`;
+export const BASE_URL = '';
+export const PRODUCTS_URL = '/api/products';
+export const USERS_URL = '/api/users';
+export const ORDERS_URL = '/api/orders';
+export const PAYPAL_URL = '/api/config/paypal';
+export const UPLOAD_URL = '/api/upload';
 
 // These were the constants used in development.
 // export const BASE_URL = 'http://localhost:8000';
