@@ -57,10 +57,10 @@ app.get('/api/config/paypal', (req, res) =>
 
 const __dirname = path.resolve(); // Set __dirname to current directory
 
-app.use('/images', express.static(path.join(__dirname, '..', 'frontend', 'public', 'images')));
+app.use('/images', express.static(path.join(__dirname, 'frontend', 'public', 'images')));
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '/frontend/dist')));
+    app.use(express.static(path.join(__dirname, 'frontend', 'dist')));
 
     app.get('*', (req,res) => 
         res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'))
