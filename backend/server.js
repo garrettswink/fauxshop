@@ -11,11 +11,7 @@ import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
-// Render's Default Deployment Port
-const port = 10000
-
-// Production ports
-// process.env.PORT || 3001;
+const port = process.env.PORT || 5000;
 
 connectDB(); // Connect to MongoDB
 
